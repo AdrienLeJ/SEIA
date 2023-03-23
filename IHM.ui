@@ -14,17 +14,7 @@
             <string>MainWindow</string>
         </property>
         <widget class="QWidget" name="centralwidget">
-            <widget class="QOpenGLWidget" name="Camera">
-                <property name="geometry">
-                    <rect>
-                        <x>410</x>
-                        <y>50</y>
-                        <width>300</width>
-                        <height>200</height>
-                    </rect>
-                </property>
-            </widget>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="ONOFF">
                 <property name="geometry">
                     <rect>
                         <x>80</x>
@@ -60,10 +50,11 @@
                     <string>On   /   OFF</string>
                 </property>
                 <property name="icon">
-                    <iconset theme="OnOff"/>
+                    <iconset theme="OnOff">
+                        <normaloff>.</normaloff>.</iconset>
                 </property>
             </widget>
-            <widget class="QLCDNumber" name="Compas">
+            <widget class="QLCDNumber" name="COMPAS">
                 <property name="geometry">
                     <rect>
                         <x>50</x>
@@ -76,7 +67,7 @@
                     <bool>false</bool>
                 </property>
             </widget>
-            <widget class="QProgressBar" name="Batterie">
+            <widget class="QProgressBar" name="BATTERIE">
                 <property name="geometry">
                     <rect>
                         <x>820</x>
@@ -88,14 +79,31 @@
                 <property name="acceptDrops">
                     <bool>true</bool>
                 </property>
+                <property name="styleSheet">
+                    <string notr="true">QProgressBar{
+                        background-color:rgba(250, 0, 0, 120);
+                        }
+                        QProgressBar:chunk{
+                        background-color:rgba(61, 174, 233, 240);
+                        }</string>
+                </property>
                 <property name="value">
                     <number>80</number>
+                </property>
+                <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+                <property name="textVisible">
+                    <bool>true</bool>
                 </property>
                 <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                 </property>
                 <property name="textDirection">
                     <enum>QProgressBar::TopToBottom</enum>
+                </property>
+                <property name="format">
+                    <string>%p%</string>
                 </property>
             </widget>
             <widget class="QLabel" name="label">
@@ -223,6 +231,31 @@
                 </property>
                 <property name="arrowType">
                     <enum>Qt::UpArrow</enum>
+                </property>
+            </widget>
+            <widget class="QLabel" name="CAMERA">
+                <property name="geometry">
+                    <rect>
+                        <x>390</x>
+                        <y>60</y>
+                        <width>351</width>
+                        <height>181</height>
+                    </rect>
+                </property>
+                <property name="autoFillBackground">
+                    <bool>true</bool>
+                </property>
+                <property name="frameShape">
+                    <enum>QFrame::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                </property>
+                <property name="lineWidth">
+                    <number>7</number>
+                </property>
+                <property name="text">
+                    <string/>
                 </property>
             </widget>
         </widget>
